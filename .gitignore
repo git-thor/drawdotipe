@@ -1,0 +1,30 @@
+# Draw.ipe
+*.ipe
+*.drawio
+*.svg
+*.eps
+*.png
+*.jpeg
+*.jpg
+
+
+# Tools
+.pytest_cache/
+.ruff_cache/
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+./*.ipe
+
+# Virtual environments
+.venv
+
+
+# Do not ignore!
+!tests/data/*.drawio
+!tests/data/*.ipe
