@@ -38,7 +38,12 @@ uv sync
 
 Or using standard pip:
 ```bash
-pip install -r pyproject.toml
+pip install .
+```
+
+For development purposes, install as editable:
+```bash
+pip install -e .
 ```
 
 ## Usage
@@ -130,20 +135,26 @@ After conversion, open the `.ipe` file in Ipe and edit the document properties:
    ```
 3. Save and your diagram now uses the exact same typesetting as your paper
 
-## Project Structure
+## Technical Structure
 
 ```
 drawioipe/
-├── convert.py      # Main conversion script
-├── README.md         # This file
-├── LICENSE           # MIT License
-├── pyproject.toml    # Python project configuration
-└── examples/         # Example .drawio and .ipe files
+├── convert.py          # Main conversion script
+├── pyproject.toml      # Project configuration
+├── tests/              # Test suite
 ```
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Testing
+
+Run the test suite with pytest:
+
+```bash
+uv run pytest
+```
 
 ## Contributing
 
