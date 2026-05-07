@@ -2,17 +2,18 @@
 
 import base64
 import tempfile
+import sys
+import xml.etree.ElementTree as ET
 import zlib
 from pathlib import Path
 
 import pytest
-import sys
 
 # Add parent directory to path so we can import converter
 parent_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(parent_dir))
 
-import convert # noqa: E402
+import convert  # noqa: E402
 
 
 class TestParseStyle:
@@ -391,7 +392,6 @@ class TestIntegration:
         assert "<?xml" in output_file.read_text()
 
 
-
 class TestIColorRegistry:
     """Tests for IpeColorRegistry class."""
 
@@ -433,7 +433,3 @@ class TestXmlEscape:
 
     def test_combined(self):
         assert convert.xml_escape("A & B < C > D") == "A &amp; B &lt; C &gt; D"
-
-
-# Import ET at module level for tests that need it
-import xml.etree.ElementTree as ET
